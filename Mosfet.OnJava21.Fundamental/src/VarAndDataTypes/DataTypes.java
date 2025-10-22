@@ -6,7 +6,6 @@
  * {@code @Date:}         Oct 22 2025 10:58
  * {@code @Description:}
  * --------------------------------------------------------------------------------------------------------
- * --------------------------------------------------------------------------------------------------------
  *   Types     length         min value                    max value                        wrapper class
  *  boolean       -              -                          -                                  Boolean
  *  byte       8  bits        -128         (-2^7)           +127        (2^7-1)                 Byte
@@ -58,6 +57,13 @@ public class DataTypes {
         printDoubleBitMode(doubleValue2);
         printDoubleBitMode(doubleValue3);
         printDoubleBitMode(doubleValue4);
+
+        {
+            //This is a scope.
+            int x = 10;
+        }
+        //在作用域外不能使用变量x
+
     }
 
     private static void printFloatBitMode(float floatValue) {
@@ -88,7 +94,6 @@ public class DataTypes {
         // 2. 将 int 值转换为 64 位的二进制字符串
         // Integer.toBinaryString 默认不会填充前导零，所以需要手动处理。
         String binaryString = Long.toBinaryString(rawIntBits);
-
         // 3. 填充前导零至 64 位
         String formattedBits = String.format("%64s", binaryString).replace(' ', '0');
 
