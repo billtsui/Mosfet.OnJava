@@ -4,19 +4,16 @@
  * Licensed under the GPLv3 License.
  * <p>
  * {@code @Author:}       Bill Tsui
- * {@code @Date:}         Oct 22 2025 10:20
+ * {@code @Date:}         Oct 22 2025 21:41
  * {@code @Description:}
  * --------------------------------------------------------------------------
  */
-package VarAndDataTypes;
+package mosfet.onjava21.fundamental.datatypes;
 
-import java.util.Scanner;
-
-public class Var {
+public class Property {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        String myName = scanner.nextLine();
-        int myAge = scanner.nextInt();
-        System.out.println("My name is " + myName + "my age is " + myAge);
+        System.getProperties().list(System.out);
+        System.out.println(System.getProperty("user.name"));
+        System.out.println(System.getProperty("java.library.path"));
     }
 }

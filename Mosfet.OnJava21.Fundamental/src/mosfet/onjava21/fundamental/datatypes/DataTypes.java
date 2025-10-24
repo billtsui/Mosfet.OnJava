@@ -17,7 +17,10 @@
  *  char       16 bits        Unicode 0 \u0000              +65535(2^16-1)                      Character
  * --------------------------------------------------------------------------------------------------------
  */
-package VarAndDataTypes;
+package mosfet.onjava21.fundamental.datatypes;
+
+import java.math.BigDecimal;
+import java.math.BigInteger;
 
 public class DataTypes {
     public static void main(String[] args) {
@@ -59,11 +62,20 @@ public class DataTypes {
         printDoubleBitMode(doubleValue4);
 
         {
-            //This is a scope.
+            //在作用域外不能使用变量x
             int x = 10;
         }
-        //在作用域外不能使用变量x
 
+        //BigDecimal
+        BigDecimal bigDecimal = new BigDecimal("3.22222222222222222222222222222222111111111111111111111111111111111111111111111");
+        BigDecimal bigDecimal1 = new BigDecimal("2.22222222222222222222222222222222");
+        System.out.println(bigDecimal.add(bigDecimal1));
+        System.out.println(bigDecimal.subtract(bigDecimal1));
+
+        //BigInteger
+        BigInteger bigInteger = new BigInteger("1000000000000000");
+        BigInteger bigInteger1 = new BigInteger("9999999999999999999");
+        System.out.println(bigInteger.add(bigInteger1));
     }
 
     private static void printFloatBitMode(float floatValue) {
