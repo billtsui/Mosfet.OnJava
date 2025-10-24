@@ -115,6 +115,60 @@ public class Operator {
          * 大多数标准库会重写equals()方法来比较对象的内容而不是它们的引用
          */
 
+        //----------------------------短路----------------------------------
+        //逻辑操作符支持短路运算，如果当前部分可以计算出表达式的结果，则后面的表达式不会被计算
+        //只会输出test1(100) 后面的表达式不再被计算
+        System.out.println(test1(100) && test2(13) && test3(100));
+
+        //----------------------------科学计数法-----------------------------
+        System.out.println(2.0e2);//200 e表示10的幂次
+        System.out.println(2.0e-2);//0.02 e表示10的幂次
+
+        //----------------------------位操作符----------------------------
+        //按位操作符仅用来操作整数基本数据类型，不能操作其他数据类型
+        System.out.println(20 & 10);
+        System.out.println(8 >> 1);
+        System.out.println(8 << 1);
+        System.out.println(Integer.toBinaryString(-8));
+        System.out.println(-8 >>> 1); //无符号右移动，忽略符号高位始终补0
+        System.out.println(String.format("%32s", Integer.toBinaryString(-8 >>> 1)).replace(' ', '0'));
+        long i11 = 0b01111111111111111111111111111100;
+        System.out.println(i11);
+
+        //--------------------------类型转换操作符---------------------------
+        int i12 = 10000;
+        long l1;
+        l1 = i12;//宽化转换
+        System.out.println(l1);
+        System.out.println((byte) i12);//窄化转换必须使用(type).byte是使用8 bits保存数据，小端法处理器直接从右截取 8 bits
+        System.out.println(String.format("%32s", Integer.toBinaryString(i12)).replace(' ', '0'));
+        System.out.println(String.format("%32s", Integer.toBinaryString((byte) i12)).replace(' ', '0'));
+
+        //--------------------------sizeof()----------------------------------
+        //Java没有sizeof运算符，sizeof通常用在处理不同机器的可移植性上。
+        //Java的数据类型在不同类型的机器上，都是固定长度的，所以不需要sizeof运算符
+
+        //--------------------------Java是允许溢出的----------------------------
+        System.out.println(Integer.MAX_VALUE * 4); //结果是负数, 乘以4 相当于向左移动两位
+        System.out.println(String.format("%32s",Integer.toBinaryString(Integer.MAX_VALUE)).replace(' ','0'));
+        System.out.println(String.format("%32s",Integer.toBinaryString(Integer.MAX_VALUE * 4)).replace(' ','0'));
+
+
+    }
+
+    private static boolean test1(int val1) {
+        System.out.println("test1(" + val1 + ")");
+        return val1 < 100;
+    }
+
+    private static boolean test2(int val2) {
+        System.out.println("test2(" + val2 + ")");
+        return val2 < 100;
+    }
+
+    private static boolean test3(int val3) {
+        System.out.println("test3(" + val3 + ")");
+        return val3 < 100;
     }
 
     private static void f(Tank t) {
