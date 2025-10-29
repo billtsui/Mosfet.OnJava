@@ -4,19 +4,17 @@
  * Licensed under the GPLv3 License.
  * <p>
  * {@code @Author:}       Bill Tsui
- * {@code @Date:}         Oct 28 2025 14:27
+ * {@code @Date:}         Oct 29 2025 10:56
  * {@code @Description:}
  * --------------------------------------------------------------------------
  */
-package mosfet.onjava21.fundamental.initializeandcleanup;
+package mosfet.onjava21.fundamental.string;
 
-/**
- * 演示对象初始化顺序
- * 按照代码的顺序初始化，即使有构造函数
- */
-public class OrderOfInitialization {
+public class UsualMethods {
     public static void main(String[] args) {
-        House house = new House();
-        house.f();
+        String s1 = "Hello";
+        String s2 = "World";
+        System.out.println(String.join(" ", s1, s2)); //Hello World
+        System.out.println(s1.concat(" " + s2));//Hello World
     }
 }
