@@ -91,5 +91,10 @@ public class RegExpression {
         System.out.println("111 match \\d{3} = " + "111".matches("\\d{3}"));//true
         System.out.println("111 match 1{3,} = " + "111".matches("1{3,}"));//true
 
+        /*
+         * abc+ 表示ab后面c出现一次或者多次
+         * 如果想要匹配abc整体出现一次或多次，需要使用(abc)+
+         */
+
     }
 }
