@@ -36,6 +36,22 @@ public class InnerClassTest {
                 System.out.println("这是一个匿名内部类");
             }
         });
+
+        //枚举类型
+        Enumeration friday = Enumeration.Friday;
+        System.out.println(friday.getName());
+        System.out.println(friday.getValue());
+
+        switch (friday) {
+            case Enumeration.Monday:
+                break;
+            case Enumeration.Friday:
+                System.out.println(Enumeration.Friday.getName());
+                break;
+            default:
+                System.out.println("Default");
+                break;
+        }
     }
 
     public void testMethod(MyInterface myInterface) {
