@@ -41,11 +41,14 @@ public class InnerClassTest {
         Enumeration friday = Enumeration.Friday;
         System.out.println(friday.getName());
         System.out.println(friday.getValue());
+        System.out.println(friday.toString());
+    }
 
-        switch (friday) {
-            case Enumeration.Monday:
+    public void choose(Enumeration enumeration) {
+        switch (enumeration) {
+            case Sunday:
                 break;
-            case Enumeration.Friday:
+            case Friday:
                 System.out.println(Enumeration.Friday.getName());
                 break;
             default:

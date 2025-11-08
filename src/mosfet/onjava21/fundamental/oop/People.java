@@ -15,6 +15,8 @@
  */
 package mosfet.onjava21.fundamental.oop;
 
+import java.util.Objects;
+
 public class People {
     //类变量 所有实例共享
     public static String gender = "Female";
@@ -89,5 +91,17 @@ public class People {
     @Override
     public String toString() {
         return "Name: " + name + " Age: " + age + " Nationality: " + nationality + " Gender: " + gender;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof People people)) return false;
+        return age == people.age && Objects.equals(name, people.name) && Objects.equals(nationality, people.nationality);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, age, nationality);
     }
 }
