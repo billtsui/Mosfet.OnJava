@@ -21,4 +21,12 @@ public class Person {
     void printName() {
         System.out.println("My name is " + this.name + ". I am  " + this.age + " years old.");
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
 }
