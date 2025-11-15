@@ -8,20 +8,26 @@
  * Licensed under the GPLv3 License. 
  */
 
-package person.billtsui.onjava.fundamental.basics;
+package person.billtsui.onjava.fundamental.basics.arrays;
 
-public class ArrayCopyDemo {
+import java.util.Arrays;
+
+public class ArrayCopyOfDemo {
     public static void main(String[] args) {
-        String[] copyFrom = {
+         String[] copyFrom = {
             "Affogato", "Americano", "Cappuccino", "Corretto", "Cortado",
             "Doppio", "Espresso", "Frappucino", "Freddo", "Lungo", "Macchiato",
             "Marocchino", "Ristretto"};
-        String[] copyTo = new String[7];
-        System.arraycopy(copyFrom, 2, copyTo, 0, 7);
+        String[] copyTo = Arrays.copyOfRange(copyFrom, 2, 9);
 
+        Arrays.stream(copyTo).map(coffee -> coffee + " ").forEach(IO::print);
+
+        IO.println("");
+        IO.println("===========================================================");
         for (String coffee : copyTo) {
             IO.print(coffee + " ");
         }
         IO.println();
+        IO.println(Arrays.toString(copyTo));
     }
 }

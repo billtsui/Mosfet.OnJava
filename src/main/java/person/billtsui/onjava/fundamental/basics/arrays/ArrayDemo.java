@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
-package person.billtsui.onjava.fundamental.basics;
+package person.billtsui.onjava.fundamental.basics.arrays;
 
 /**
  *

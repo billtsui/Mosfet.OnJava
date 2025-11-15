@@ -8,7 +8,7 @@
  * Licensed under the GPLv3 License. 
  */
 
-package person.billtsui.onjava.fundamental.basics;
+package person.billtsui.onjava.fundamental.basics.arrays;
 
 public class MultiDimensionalArrayExercise {
     public static void main(String[] args) {
