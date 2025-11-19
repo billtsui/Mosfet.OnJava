@@ -8,8 +8,7 @@
  * Licensed under the GPLv3 License. 
  */
 
-package person.billtsui.onjava.fundamental.oop;
-
+package person.billtsui.onjava.fundamental.oop.klass;
 
 public class StudentTest {
     public static void main(String[] args) {
