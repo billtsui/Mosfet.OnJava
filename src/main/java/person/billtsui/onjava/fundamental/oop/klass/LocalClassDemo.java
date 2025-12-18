@@ -45,6 +45,8 @@ public class LocalClassDemo {
 
         PhoneNumber myNumber1 = new PhoneNumber(phoneNumber1);
         PhoneNumber myNumber2 = new PhoneNumber(phoneNumber2);
+        myNumber1.printOriginalNumbers();
+        myNumber2.printOriginalNumbers();
         
         if (myNumber1.getNumber() == null) {
             IO.println("First number is invalid");
@@ -60,5 +62,6 @@ public class LocalClassDemo {
 
     public static void main(String... args) {
         validatePhoneNumber("123-456-7890", "456-7890");
+        
     }
 }

@@ -37,6 +37,8 @@ public class EnumDemo {
 
         DayOfWeek[] days = DayOfWeek.values();
         DayOfWeek monday = DayOfWeek.valueOf("MONDAY");
+        IO.println(days.length);
+        IO.println(monday.toString());
 
         List<DayOfWeek> dayList = new ArrayList<>(List.of(DayOfWeek.FRIDAY, DayOfWeek.TUESDAY, DayOfWeek.SUNDAY));
         Collections.sort(dayList);
